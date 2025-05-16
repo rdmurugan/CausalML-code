@@ -18,3 +18,14 @@ You can install the necessary libraries using pip:
 
 ```bash
 pip install numpy pandas matplotlib statsmodels torch scikit-learn networkx
+
+Usage
+You can just navigate to the chapter directory and run the Python scripts. For example:
+
+cd chapter_1
+python correlation_vs_causation.py
+Disclaimer
+These code examples are intended for educational purposes and may be simplified for clarity. They may not be suitable for direct use in production environments. Please refer to the book for detailed explanations and context.
+
+Author
+Durai Rajamanickam
