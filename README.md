@@ -9,6 +9,19 @@ This repository contains the Python code examples that accompany the book "Causa
 
 The code is organized by chapter. Each chapter directory contains one or more Python files that demonstrate the key concepts discussed in that chapter.
 
+## Usage
+You can just navigate to the chapter directory and run the Python scripts. For example:
+
+# cd chapter_1
+python correlation_vs_causation.py
+
+## Disclaimer
+These code examples are intended for educational purposes and may be simplified for clarity. They may not be suitable for direct use in production environments. Please take a look at the book for detailed explanations and context.
+
+## Author
+Durai Rajamanickam
+
+
 ## Requirements
 
 * Python 3.x
@@ -19,14 +32,4 @@ You can install the necessary libraries using pip:
 ```bash
 pip install numpy pandas matplotlib statsmodels torch scikit-learn networkx
 
-## Usage
-You can just navigate to the chapter directory and run the Python scripts. For example:
 
-# cd chapter_1
-python correlation_vs_causation.py
-
-## Disclaimer
-These code examples are intended for educational purposes and may be simplified for clarity. They may not be suitable for direct use in production environments. Please refer to the book for detailed explanations and context.
-
-## Author
-Durai Rajamanickam
