@@ -10,9 +10,9 @@ This   book bridges the gap between causal inference and deep learning, providin
 
 ##   ✨ Key Features
 
-* **Comprehensive   Coverage:** Code examples are provided for most chapters of the book,   illustrating key concepts from basic causal reasoning to advanced deep   learning models.
+* **Comprehensive   Coverage:** Code examples illustrate key concepts from basic causal reasoning to advanced deep learning models in most chapters of the book.
 * **Practical   Focus:** The code emphasizes practical implementation and adaptation of   techniques, enabling readers to apply causal deep learning to real-world   problems.
-* **Clear   Organization:** Code is structured by chapter, making it easy to navigate   and find relevant examples.
+* **Clear   Organization:** Code is structured by chapter, making navigating and finding relevant examples easy.
 * **Beginner-Friendly:** The examples are designed to be accessible and well-documented, aligning   with the book's goal of introducing the subject to a broad audience.
 
 ##   📂 Organization
@@ -97,7 +97,7 @@ For   example:
 cd chapter_1
 python   correlation_vs_causation.py
 ⚠️ Disclaimer
-These   code examples are provided for educational purposes to illustrate the   concepts discussed in the book. They are simplified for clarity and may   not be optimized for performance or suitable for production environments.   Always adapt and validate the code for your specific use case. Refer to   the book for detailed explanations, theoretical background, and best   practices.
+These   code examples are provided for educational purposes to illustrate the   concepts discussed in the book. They are simplified for clarity and may   not be optimized for performance or suitable for production environments.   Always adapt and validate the code for your specific use case. Please take a look at   the book for detailed explanations, theoretical background, and best   practices.
 
 🤝 Contributions
 Contributions   to this repository are welcome! If you find a bug, have a suggestion,   or want to add an example, please:
@@ -107,17 +107,17 @@ Create a new branch for your changes.
 Commit your changes with clear and descriptive commit messages.
 Push your changes to your fork.
 Submit a pull request.
-Please   ensure your code adheres to basic Python style guidelines (PEP 8).
+Please   ensure your code meets basic Python style guidelines (PEP 8).
 
 📄 License
 This   code is released under the MIT   License. You are free to use,   modify, and distribute it for both commercial and non-commercial purposes.   See the LICENSE file for the full license text.
 
 🔗 Related Resources
-Book Website/Page: [Link to the book's website or publisher page]
-Author's Website/Blog: [Link to your website or blog]
-Online Forum/Discussion: [Link to a forum or discussion group for the book, if any]
+Book Website/Page: [In progress..]
+Author's Website/Blog: [In progress...]
+Online Forum/Discussion: [TBD]
 Author
 Durai   Rajamanickam
 
-LinkedIn: [Your LinkedIn Profile]
-Email: [Your Email Address (Optional)]
+LinkedIn: www.linkedin.com/in/
+Email: [johndoe@infinidatum.com]
