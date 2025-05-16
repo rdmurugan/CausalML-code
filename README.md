@@ -3,7 +3,7 @@ Chapter wise source code for Causal Machine Learning book
 
 # Causal Deep Learning: Code Examples
 
-This repository contains the Python code examples that accompany the book "Causal Deep Learning: A Beginner's Journey" by Durai Rajamanickam.
+This repository contains the Python code examples that accompany the book "Causal Inference for Machine Learning Engineers - A Practical Guide" by Durai Rajamanickam.
 
 ## Organization
 
