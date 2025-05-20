@@ -15,44 +15,6 @@ This   book bridges the gap between causal inference and deep learning, providin
 * **Clear   Organization:** Code is structured by chapter, making navigating and finding relevant examples easy.
 * **Beginner-Friendly:** The examples are designed to be accessible and well-documented, aligning   with the book's goal of introducing the subject to a broad audience.
 
-##   📂 Organization
-
-The   code is organized into directories corresponding to the book's chapters:
-
-CausalDL-Code/
-├──   README.md         &lt;- You are here!
-├──   chapter_1/       &lt;- Introduction to Causal Thinking
-│   └──   correlation_vs_causation.py
-├──   chapter_2/       &lt;- Understanding Treatments, Outcomes, and Confounding
-│   └──   confounding_simulation.py
-├──   chapter_3/       &lt;- Causal Estimation Basics
-│   └──   ate_estimation.py
-├──   chapter_4/       &lt;- Causal Graphs
-│   └──   (causal_graph_visualization.py) # Optional graph visualization
-├──   chapter_5/       &lt;- Interventions and Counterfactuals
-│   └──   do_operator_illustration.py
-├──   chapter_6/       &lt;- Introduction to Do-Calculus
-│   └──   backdoor_adjustment.py
-├──   chapter_7/       &lt;- Causal Inference Meets Deep Learning
-│   └──   tarnet_example.py
-├──   chapter_8/       &lt;- Simulating Causal Data and Evaluation Metrics
-│   └──   data_simulation_and_metrics.py
-├──   chapter_9/       &lt;- Balancing Representations - CFRNet
-│   └──   cfrnet_loss_example.py
-├──   chapter_10/      &lt;- Learning Propensity Scores and DragonNet
-│   └──   propensity_score_loss.py
-├──   chapter_11/      &lt;- Evaluating Causal Models Without Counterfactuals
-│   └──   pehe_calculation.py
-├──   chapter_13/      &lt;- Advanced Topics in Causal Inference
-│   └──   instrumental_variables.py
-├──   chapter_14/      &lt;- Case Studies
-│   ├──   case_study_1.py
-│   ├──   case_study_2.py
-│   ├──   ... (etc.)
-└──   utils/          &lt;- Helper functions (e.g., plotting)
-└──   plotting.py
-
-
 ##   🛠️ Requirements
 
 * Python 3.7+
