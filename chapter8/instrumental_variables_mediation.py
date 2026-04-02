@@ -161,3 +161,4 @@ if __name__ == '__main__':
     direct_effect, indirect_effect, total_effect = implement_mediation_analysis(mediation_data)
     print("\nIn the Mediation example, M is the mediator.")
     print("The code decomposes the total effect of T on Y into direct and indirect effects (through M).")
+

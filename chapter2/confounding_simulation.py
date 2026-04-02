@@ -100,3 +100,4 @@ if __name__ == '__main__':  # Ensures code only runs when the script is executed
     print("2.  'analyze_association()' calculates and prints the mean relief for aspirin users and non-users.")
     print("3.  'visualize_confounding()' creates a scatter plot to show the relationship between 'Health' and 'Aspirin'.")
     print("The 'if __name__ == '__main__':' block ensures that these functions are called only when the script is run, not when imported as a module.")
+

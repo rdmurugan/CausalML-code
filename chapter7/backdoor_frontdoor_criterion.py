@@ -1,3 +1,37 @@
+# ============================================================
+# Backdoor Adjustment with Regression
+# ============================================================
+
+import numpy as np
+import pandas as pd
+import statsmodels.formula.api as sm  # For regression
+
+# Simulate data
+np.random.seed(10)
+n = 1000
+Z = np.random.normal(0, 1, n)  # Confounder
+T = 0.5 * Z + np.random.normal(0, 1, n)
+Y = 2 * T + Z + np.random.normal(0, 1, n)
+data = pd.DataFrame({'Z': Z, 'T': T, 'Y': Y})
+
+# 1. Naive Regression (biased)
+model_naive = sm.ols("Y ~ T", data=data).fit()
+print("Naive T coefficient:", model_naive.params['T'])
+
+# 2. Regression Adjustment (unbiased, if Z blocks all backdoor paths)
+model_adjusted = sm.ols("Y ~ T + Z", data=data).fit()
+print("Adjusted T coefficient:", model_adjusted.params['T'])
+
+# Explanation:
+#   -   The coefficient of T in `model_adjusted` is our estimate of the causal effect of T on Y, 
+#       *assuming* Z satisfies the backdoor criterion.
+#   -   Statsmodels handles the summation implicitly through the regression.
+
+
+# ============================================================
+# Chapter 7: Focusing on demonstrating the backdoor and frontdoor criteria with simulated data and regression.
+# ============================================================
+
 import numpy as np
 import pandas as pd
 import statsmodels.formula.api as sm  # For regression
@@ -105,3 +139,4 @@ if __name__ == '__main__':
     # Frontdoor Example
     frontdoor_data = simulate_frontdoor_data(effect_t_m=1.0, effect_m_y=1.5, effect_u_t=0.5, effect_u_y=0.8)
     demonstrate_frontdoor_adjustment(frontdoor_data)
+

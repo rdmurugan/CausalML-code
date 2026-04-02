@@ -1,3 +1,34 @@
+# ============================================================
+# Simulating causal data with treatment effect
+# ============================================================
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.linear_model import LogisticRegression
+
+# Simulate covariates
+n = 1000
+X = np.random.normal(0, 1, size=(n, 5))
+
+# Simulate propensity scores and treatment assignment
+ps_model = LogisticRegression()
+ps_model.fit(X, np.random.binomial(1, 0.5, size=n))
+propensity_scores = ps_model.predict_proba(X)[:, 1]
+T = np.random.binomial(1, propensity_scores)
+
+# Simulate potential outcomes
+Y0 = np.dot(X, np.array([0.5, -0.3, 0.2, 0.1, -0.2])) + np.random.normal(0, 1, n)
+Y1 = Y0 + 2.0  # Constant treatment effect
+
+# Observed outcome
+Y = T * Y1 + (1 - T) * Y0
+
+
+# ============================================================
+# Chapter 10: Focusing on simulating causal data and implementing the evaluation metrics (PEHE and ATE Error)
+# ============================================================
+
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -107,3 +138,4 @@ plt.ylabel("Y1 (Outcome if Treated)")
 plt.title("True Potential Outcomes (Test Set)") # Update title for clarity
 plt.plot([min(Y0_test), max(Y0_test)], [min(Y0_test), max(Y0_test)], color='red', linestyle='--')  # Line of equality
 plt.show()
+

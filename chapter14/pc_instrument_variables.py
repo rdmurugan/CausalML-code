@@ -103,3 +103,4 @@ if __name__ == '__main__':
     print("\n--- Instrumental Variables ---")
     print("This demonstrates Two-Stage Least Squares (2SLS).")
     print("It estimates the effect of T on Y using an instrument Z to address unobserved confounding.")
+

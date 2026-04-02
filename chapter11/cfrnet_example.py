@@ -1,3 +1,66 @@
+# ============================================================
+# Simple CFRNet Implementation in PyTorch
+# ============================================================
+
+import torch
+import torch.nn as nn
+
+class CFRNet(nn.Module):
+    def __init__(self, input_dim):
+        super(CFRNet, self).__init__()
+        self.shared = nn.Sequential(
+            nn.Linear(input_dim, 20),
+            nn.ReLU(),
+            nn.Linear(20, 20),
+            nn.ReLU()
+        )
+        self.head_treated = nn.Sequential(
+            nn.Linear(20, 10),
+            nn.ReLU(),
+            nn.Linear(10, 1)
+        )
+        self.head_control = nn.Sequential(
+            nn.Linear(20, 10),
+            nn.ReLU(),
+            nn.Linear(10, 1)
+        )
+        
+    def forward(self, x, t):
+        shared = self.shared(x)
+        yt = self.head_treated(shared)
+        yc = self.head_control(shared)
+        return t * yt + (1 - t) * yc
+
+
+# ============================================================
+# Evaluating CFRNet with PEHE and ATE Error
+# ============================================================
+
+# Predict outcomes under treatment and control
+with torch.no_grad():
+    y0_pred = model(X, torch.zeros_like(T)).squeeze().numpy()
+    y1_pred = model(X, torch.ones_like(T)).squeeze().numpy()
+
+# Calculate true treatment effects
+true_effect = Y1 - Y0
+pred_effect = y1_pred - y0_pred
+
+# PEHE
+pehe = np.sqrt(np.mean((pred_effect - true_effect) ** 2))
+
+# ATE Error
+true_ate = np.mean(true_effect)
+pred_ate = np.mean(pred_effect)
+ate_error = np.abs(pred_ate - true_ate)
+
+print(f"PEHE: {pehe:.4f}")
+print(f"ATE Error: {ate_error:.4f}")
+
+
+# ============================================================
+# Chapter 11: Focusing on implementing the CFRNet architecture in PyTorch
+# ============================================================
+
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -169,3 +232,4 @@ if __name__ == '__main__':
     print("1.  Outcome prediction loss (MSE).")
     print("2.  A simplified balancing loss (difference in mean representations for treated and control groups).")
     print("The 'ipm_lambda' parameter controls the trade-off between these two objectives.")
+

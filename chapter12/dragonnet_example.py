@@ -1,3 +1,77 @@
+# ============================================================
+# Simple DragonNet Implementation in PyTorch
+# ============================================================
+
+import torch
+import torch.nn as nn
+
+class DragonNet(nn.Module):
+    def __init__(self, input_dim):
+        super(DragonNet, self).__init__()
+        self.shared = nn.Sequential(
+            nn.Linear(input_dim, 20),
+            nn.ReLU(),
+            nn.Linear(20, 20),
+            nn.ReLU()
+        )
+        self.head_treated = nn.Sequential(
+            nn.Linear(20, 10),
+            nn.ReLU(),
+            nn.Linear(10, 1)
+        )
+        self.head_control = nn.Sequential(
+            nn.Linear(20, 10),
+            nn.ReLU(),
+            nn.Linear(10, 1)
+        )
+        self.head_propensity = nn.Sequential(
+            nn.Linear(20, 10),
+            nn.ReLU(),
+            nn.Linear(10, 1),
+            nn.Sigmoid()
+        )
+        
+    def forward(self, x, t):
+        shared = self.shared(x)
+        yt = self.head_treated(shared)
+        yc = self.head_control(shared)
+        prop_t = self.head_propensity(shared)
+        y_pred = t * yt + (1 - t) * yc
+        return y_pred, prop_t
+
+
+# ============================================================
+# Evaluating DragonNet with PEHE and ATE Error
+# ============================================================
+
+# Predict outcomes under treatment and control
+with torch.no_grad():
+    y0_pred, _ = model(X, torch.zeros_like(T))
+    y1_pred, _ = model(X, torch.ones_like(T))
+
+y0_pred = y0_pred.squeeze().numpy()
+y1_pred = y1_pred.squeeze().numpy()
+
+# Calculate treatment effects
+true_effect = Y1 - Y0
+pred_effect = y1_pred - y0_pred
+
+# PEHE
+pehe = np.sqrt(np.mean((pred_effect - true_effect) ** 2))
+
+# ATE Error
+true_ate = np.mean(true_effect)
+pred_ate = np.mean(pred_effect)
+ate_error = np.abs(pred_ate - true_ate)
+
+print(f"PEHE: {pehe:.4f}")
+print(f"ATE Error: {ate_error:.4f}")
+
+
+# ============================================================
+# Chapter 12:  focusing on implementing the DragonNet architecture in PyTorch
+# ============================================================
+
 import torch
 import torch.nn as nn
 import torch.optim as optim
@@ -186,3 +260,4 @@ if __name__ == '__main__':
     print("2.  Propensity score estimation (propensity_hat).")
     print("The loss function combines outcome loss, propensity loss, and a simplified targeted regularization term.")
     print("Evaluation includes MSE, ATE error, PEHE, and AUC for propensity prediction.")
+

@@ -58,3 +58,4 @@ print(model.summary())  # Print regression summary
 #
 # Key takeaway: The code simulates a scenario where a correlation exists due to a common cause.
 # The regression model might suggest a predictive relationship, but it doesn't mean ice cream sales cause drowning.
+

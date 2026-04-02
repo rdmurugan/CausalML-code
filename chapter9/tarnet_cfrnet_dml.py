@@ -1,11 +1,5 @@
-"""
-Chapter 9: Causal Inference Meets Deep Learning
-From "Causal Inference for Machine Learning Engineers - A Practical Guide"
-by Durai Rajamanickam
-"""
-
 # ============================================================
-# Code Block 1: Simple Double Machine Learning Implementation
+# Simple Double Machine Learning Implementation
 # ============================================================
 
 import numpy as np
@@ -39,7 +33,7 @@ print(f"Estimated treatment effect (theta): {theta_hat:.4f}")
 
 
 # ============================================================
-# Code Block 2: Chapter 7: A basic TARNet-like structure
+# Chapter 7: A basic TARNet-like structure
 # ============================================================
 
 import torch

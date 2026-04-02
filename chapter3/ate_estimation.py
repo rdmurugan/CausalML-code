@@ -110,3 +110,4 @@ if __name__ == '__main__':
     print("1.  Regression Adjustment: Includes 'X' as a covariate in the regression model.")
     print("2.  Inverse Propensity Weighting (IPW): Weights observations by the inverse probability of treatment.")
     print("The visualization shows the confounding effect and the distribution of propensity scores.")
+

@@ -141,3 +141,4 @@ plt.title("Potential Outcomes: True (Test Set) vs. Predicted") # Changed title
 plt.plot([min(Y0_test), max(Y0_test)], [min(Y0_test), max(Y0_test)], color='red', linestyle='--', label="Line of Equality") # Use test set for limits
 plt.legend()
 plt.show()
+

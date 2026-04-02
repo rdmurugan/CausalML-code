@@ -91,3 +91,4 @@ if __name__ == '__main__':
     print("1.  Observational analysis:  Analyzing the relationship between 'T' and 'Y' as observed in the data.")
     print("2.  Interventional analysis:  Simulating the 'do(T)' operation by setting 'T' to a fixed value and observing the resulting distribution of 'Y'.")
     print("The comparison of distributions highlights how interventions can change the relationship between variables compared to passive observation.")
+

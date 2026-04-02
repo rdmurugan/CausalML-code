@@ -70,3 +70,4 @@ if __name__ == '__main__':
     print("This code demonstrates how confounding biases the estimation of the effect of T on Y.")
     print("It shows how backdoor adjustment (analogous to do-calculus) can correct for this bias.")
     print("Specifically, it illustrates (in a simplified way) how do-calculus helps us identify and remove the influence of Z when estimating the effect of T on Y.")
+
